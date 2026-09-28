@@ -64,6 +64,9 @@ then a slide map, then the argument in a few lines.
 book defines it, one concrete example each. Make a concept page only for an idea that
 recurs across chapters and already has material from more than one.
 
+**c. Sources only — `wiki-style: sources`.** Skip concept pages. The source page is the
+record (e.g. a guest-speaker seminar: who spoke, their advice, what stuck).
+
 **d. Cross-reference.** Add `[[wikilinks]]` between related pages in both directions —
 **within this course only**. Each course folder is its own Obsidian vault, so a link to
 another course's page is dead there. If new material **contradicts** an existing page,

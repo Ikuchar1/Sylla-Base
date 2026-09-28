@@ -1,6 +1,6 @@
 ---
 course: <DEPT-###>
-wiki-style: concepts   # concepts (default) | glossary — see CLAUDE.md "Wiki style per course"
+wiki-style: concepts   # concepts (default) | glossary | sources — see CLAUDE.md "Wiki style per course"
 section: <e.g. undergrad / 480 — requirements for other sections are skipped>
 ---
 

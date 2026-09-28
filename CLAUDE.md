@@ -86,6 +86,8 @@ Each `course.md` sets `wiki-style`:
   defined terms, one concrete example each) and one `wiki/sources/reading-<slug>.md`
   (the chapter's argument and evidence — draft material for reading summaries). Make a
   `concepts/` page only for an idea that genuinely recurs across chapters.
+- **`sources`** — for courses with nothing to study (e.g. a pass/no-pass guest-speaker
+  seminar). One `sources/` page per session is the whole record; no concept pages.
 
 **Sources vs concepts:** `sources/lecture-2026-08-27.md` answers *"what happened
 Thursday."* `concepts/weather-front.md` answers *"what do I know about fronts"* — built
