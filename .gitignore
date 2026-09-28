@@ -1,0 +1,10 @@
+# Obsidian pane layout — rewrites constantly, not worth versioning
+**/.obsidian/workspace.json
+**/.obsidian/workspace-mobile.json
+# Claude Code local state
+.claude/worktrees/
+.claude/settings.local.json
+# macOS
+.DS_Store
+# Files over GitHub's 100 MB limit go here, e.g.:
+# fall-2026/CS-101/materials/huge-deck.pptx
