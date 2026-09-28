@@ -10,11 +10,14 @@ status: active
 
 **In one sentence:** <plain-language definition, no jargon>
 
-## Detail
-<the actual explanation, built up across lectures>
+> **Deck:** `materials/<file>.pdf` slides N–M
 
-## Why it matters / how it's tested
-<what the instructor emphasized; likely exam framing>
+## Detail
+<The highlights, built up across lectures — with one concrete example. Cite the slide
+range instead of restating it.>
+
+## How it's tested
+<What the instructor emphasized; likely exam framing.>
 
 ## Related
 - [[other-concept]]
@@ -23,4 +26,4 @@ status: active
 - [[lecture-YYYY-MM-DD]]
 
 ## Pins
-<!-- Your own corrections. NEVER overwrite these when regenerating. -->
+<!-- Your own corrections. NEVER overwritten when regenerating. -->

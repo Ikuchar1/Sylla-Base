@@ -26,8 +26,11 @@ quiz yourself on, and ask questions against.
        cp -R _TEMPLATE fall-2026/CS-101
        cp -R _TEMPLATE fall-2026/HIST-200
 
-3. **Fill in each `course.md`** — meeting days, grading, exam dates. "What did I miss?"
-   checks against it.
+3. **Fill in each `course.md`** — meeting days, grading, exam dates ("what did I miss?"
+   checks against them), plus two settings: `section` (so Claude skips requirements for
+   other sections, like grad-only work) and `wiki-style` — `concepts` for technical
+   courses, `glossary` for reading-heavy ones where one page per term would mean
+   hundreds of files.
 
 4. **Edit `CLAUDE.md`** — fill in `## Current term` with your course list and
    `## About the student` with how you like things explained.
@@ -54,15 +57,17 @@ quiz yourself on, and ask questions against.
 |---|---|
 | `/process-notes [COURSE]` | Ingest new lectures, decks, and session logs into the wiki. No argument = every course this term. |
 | `/class-mode [COURSE]` | Live study partner during lecture. Short answers, logged to `sessions/`. |
-| `/homework-mode [COURSE] [assignment]` | Works through an assignment with you. Asks you to commit to an answer before it writes code, then logs where your guess was wrong. |
+| `/homework-mode [COURSE] [assignment]` | Works through an assignment with you, one section at a time. Explains and reviews your code, or writes TODO cells when you ask. For writing: outlines with word counts, reference drafts, minimal proofreading. Logs where your guess was wrong. |
 
 Then just ask:
 
+    grab the chapter 3 slides from my Downloads
+    what's on quiz 2? teach me one topic at a time
+    make a 2-page cheat sheet for exam 1
+    check my answers
     quiz me on unit 1
     what did I miss?
-    exam 1 review
     what's due?
-    fill in the gaps in today's notes
 
 ## Layout
 
@@ -90,6 +95,11 @@ never edits them. Everything Claude writes goes in `wiki/` or `sessions/`.
   push to GitHub — add them to `.gitignore`.
 - **Name lecture files `YYYY-MM-DD`** — the only date format that sorts as text.
 - **`## Pins`** on any wiki page is for your own corrections. Claude never overwrites them.
+- **Too long? Too fast?** Say "simpler", "slow down", or "one step at a time" — the
+  skills are built to cut length and lead with an example. How Claude talks to you is set
+  at the top of `CLAUDE.md`; edit it to taste.
+- `.claude/settings.json` keeps background Claude sessions editing on `main` instead of a
+  separate worktree branch. Delete it if you'd rather they isolate.
 - **Wikilinks stay within one course.** Concept filenames still need to be unique across
   the whole repo (`social-norm.md`, not `norm.md`) so they don't collide in the root vault.
 
