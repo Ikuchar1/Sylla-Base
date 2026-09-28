@@ -112,3 +112,7 @@ never edits them. Everything Claude writes goes in `wiki/` or `sessions/`.
   `obsidian-cli`, `obsidian-markdown`) are by Steph Ango
   ([@kepano](https://github.com/kepano/obsidian-skills)), MIT — see
   `.claude/skills/LICENSE-kepano-obsidian-skills`.
+
+## License
+
+MIT — see `LICENSE`. The kepano Obsidian skills keep their own MIT license.
