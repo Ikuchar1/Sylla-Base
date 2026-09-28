@@ -103,8 +103,8 @@ and ask if anything's off. Don't build wiki pages yet; that's step 7.
 
 Say:
 > Now download anything already posted for **CSCE 480H** — slides, readings, handouts.
-> PDF if Canvas gives you a choice. Grab them all at once; if Canvas hands you a .zip,
-> that's fine. Tell me when they're in Downloads. Nothing posted yet? Just say so.
+> PDF if Canvas gives you a choice. Tell me when they're in Downloads. Nothing posted
+> yet? Just say so.
 
 Pull them in — see below. Slides, readings, and the textbook go in `materials/`; a
 homework notebook or starter file goes in `assignments/<name>/`. Keep the instructor's
