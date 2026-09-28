@@ -36,6 +36,8 @@ List `<TERM>/<COURSE>/lectures/*.txt`, `.../materials/*`, and `.../sessions/*.md
 - **Homework session** (`hw-<assignment>.md`) — **not** a source page. Its wrong guesses
   and what fixed them fold into that assignment's page in `wiki/assignments/`; its
   concept links update the concept pages.
+- **Syllabus** (any file in `materials/` with "syllabus" in the name) — ingest it
+  **first**. It gets its own treatment — see [Syllabus](#syllabus) below.
 - **Textbook** (a big PDF) — if there's no `<book>-full.txt` yet, extract it once with
   `pdftotext` and build `<book>-chapter-index.md` (chapter → line range). Ingest only the
   chapters the student names, by grepping the text — never the whole book at once.
@@ -50,7 +52,7 @@ a trace.
 
 **b. Source page.** Write `wiki/sources/<name>.md` from `wiki/sources/_TEMPLATE.md`:
 `lecture-YYYY-MM-DD`, `class-YYYY-MM-DD` (class session), `deck-NN-<slug>`, or
-`reading-<slug>`. Open with the pointer to the file (`> **Full deck:** materials/...`),
+`reading-<slug>`. (A syllabus is `<dept-###>-syllabus` — see below.) Open with the pointer to the file (`> **Full deck:** materials/...`),
 then a slide map, then the argument in a few lines.
 
 **c. Concept pages — `wiki-style: concepts`.** For each concept, create or update
@@ -81,6 +83,27 @@ requirements for a section the student isn't in (see `course.md`).
 Append one entry to `wiki/log.md`:
 `## [YYYY-MM-DD] ingest | <source file> → N pages created, M updated`
 
+## Syllabus
+
+A syllabus replaces steps b–e with:
+
+- **Source page** `wiki/sources/<dept-###>-syllabus.md` (e.g. `csce-480h-syllabus`) —
+  never plain `syllabus.md`; every course has one and filenames must be unique (a lab
+  syllabus: `<dept-###>-lab-syllabus`). What's
+  graded (component · weight · link to its page), the course arc in a few lines, and
+  only the policies that cost points (late penalty, drops, a must-pass component).
+- **Assignment pages** from `wiki/assignments/_TEMPLATE.md`. One page per **major**
+  graded item (exam, project, paper) with `due` and `weight`. Recurring small items
+  (weekly quizzes, labs, discussion posts) share one `<type>-tracker.md` — a row per due
+  date — instead of a page each. Skip items for sections the student isn't in.
+- **`course.md`** — fill any field still showing a `<placeholder>`. Don't overwrite
+  what's already filled in.
+- **Concept pages: none**, unless the syllabus says which topics a graded item covers
+  (e.g. "Quiz 1: units 1–2"). Then reserve those as `status: planned` stubs so the
+  assignment page can link them.
+
+In the report, name the next thing due.
+
 ## 3. Report
 
 Keep it short — overview level. Files ingested, pages created vs updated, any
@@ -95,4 +118,5 @@ no notes per `course.md`). No page-by-page tour.
 - **Never overwrite a `## Pins` section.** Those are the student's own corrections.
 - Cite sources on every claim: `[[lecture-2026-08-27]]`.
 - Mark outside knowledge `> [!note] Outside the notes`.
-- `.pptx` cannot be read as text — convert to PDF or ask the student to export it.
+- `.pptx` / `.docx`: prefer a PDF if the student has one. Otherwise use the rough text
+  dump from `CLAUDE.md` — it loses figures, so say which slides were mostly images.

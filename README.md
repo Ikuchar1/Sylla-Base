@@ -14,37 +14,38 @@ quiz yourself on, and ask questions against.
 
 ## Setup
 
-1. **Get a copy.** Click **Use this template** on GitHub to make your own repo
-   (keep it private — it'll hold your coursework), then clone it:
+1. **Get a copy.** Click **Use this template** on GitHub to make your own repo — set it
+   to **private**, since it'll hold your coursework. Then clone it:
 
        git clone https://github.com/<you>/<your-notes-repo>.git Notes
        cd Notes
 
-2. **Add a term and your courses.** One folder per term, one per course:
+2. **Run `claude` and type `/get-started`.** It asks your name and classes, makes the
+   folders, and walks you through downloading each syllabus and the slides posted so
+   far. You download from Canvas; Claude pulls the files from your Downloads folder.
+   Progress is checked off in `SETUP.md`, so you can stop and pick up later.
 
-       mkdir fall-2026
-       cp -R _TEMPLATE fall-2026/CS-101
-       cp -R _TEMPLATE fall-2026/HIST-200
+Run `/get-started` again at the start of each semester, or to add a class.
 
-3. **Fill in each `course.md`** — meeting days, grading, exam dates ("what did I miss?"
-   checks against them), plus two settings: `section` (so Claude skips requirements for
-   other sections, like grad-only work) and `wiki-style` — `concepts` for technical
-   courses, `glossary` for reading-heavy ones where one page per term would mean
-   hundreds of files.
+<details>
+<summary>Setting up by hand instead</summary>
 
-4. **Edit `CLAUDE.md`** — fill in `## Current term` with your course list and
-   `## About the student` with how you like things explained.
+    mkdir fall-2026
+    cp -R _TEMPLATE fall-2026/CS-101      # one per class
 
-5. **Open in Obsidian.** Each course folder is its own vault (**Open folder as vault** →
-   `fall-2026/CS-101`) showing only that class. The repo root is also a vault if you
-   want to see everything at once.
+Put each syllabus in `<class>/materials/`, fill in `course.md` (`wiki-style`: `concepts`
+for technical classes, `glossary` for reading-heavy ones, `sources` for seminars with
+nothing to study), and fill `## About the student` and `## Current term` in `CLAUDE.md`.
+Then run `/process-notes all`.
+</details>
 
 ## Daily workflow
 
 1. **In class** — type notes into `<TERM>/<COURSE>/lectures/YYYY-MM-DD.txt`
    (copy `_template.txt` to start), or run `/class-mode CS-101` and ask questions live.
    That logs to `<TERM>/<COURSE>/sessions/`.
-2. **After class** — drop the slide deck into `<TERM>/<COURSE>/materials/`, ideally as PDF.
+2. **After class** — download the slides from Canvas (PDF if offered) and tell Claude
+   "grab the new CS-101 slides from my Downloads". It copies them into `materials/`.
 3. **Process** — run `claude` **from the repo root** (the skills live there), then:
 
        /process-notes CS-101
@@ -55,6 +56,7 @@ quiz yourself on, and ask questions against.
 
 | Command | What it does |
 |---|---|
+| `/get-started` | Setup: your name, your classes, each syllabus and the slides so far. Rerun for a new semester or to add a class. |
 | `/process-notes [COURSE]` | Ingest new lectures, decks, and session logs into the wiki. No argument = every course this term. |
 | `/class-mode [COURSE]` | Live study partner during lecture. Short answers, logged to `sessions/`. |
 | `/homework-mode [COURSE] [assignment]` | Works through an assignment with you, one section at a time. Explains and reviews your code, or writes TODO cells when you ask. For writing: outlines with word counts, reference drafts, minimal proofreading. Logs where your guess was wrong. |

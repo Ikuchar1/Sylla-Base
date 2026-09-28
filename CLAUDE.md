@@ -29,7 +29,7 @@ something to learn it — not asking for a document.
 
 ## About the student
 
-<!-- Filled in during setup. Name, year, major, what they're comfortable with (e.g.
+<!-- Filled in by /get-started. Name, year, major, what they're comfortable with (e.g.
 "new to Python"), and anything else about how they like things explained. -->
 
 ## The three layers
@@ -70,7 +70,7 @@ Wikilinks stay **within one course**; never link a page to another course's page
 
 ## Current term
 
-<!-- Filled in during setup. Keep it current — it's how Claude resolves a bare course code. -->
+<!-- Filled in by /get-started. Keep it current — it's how Claude resolves a bare course code. -->
 **<term-folder>/** (current)
 - **<DEPT-###>** — <Course name>, <meeting days/times>
 
@@ -118,12 +118,15 @@ taught, and `status: active` once a lecture has filled them in.
 - **Surgical edits.** Updating a page means integrating new material, not regenerating it.
 - **Saving a file is not ingesting it.** "Grab the slides from my Downloads" means copy
   the file into that course's `materials/` (or `assignments/`) and stop. Only
-  `/process-notes` — or an explicit "process it" — writes to the wiki.
+  `/process-notes` — or an explicit "process it" — writes to the wiki. And the reverse:
+  never build a wiki page from a file that's only in Downloads — copy it in first, or
+  the page cites a file the repo doesn't have.
 - **Respect the student's section.** If `course.md` says which section they're in (e.g.
   undergrad), skip requirements that belong to other sections (e.g. "grad students
   additionally…") — don't list them as pending work.
-- `.pptx`/`.docx` are zip archives, not text. Convert to PDF first (or
-  `unzip -p deck.pptx 'ppt/slides/slide*.xml' | sed 's/<[^>]*>/ /g'` for a rough dump).
+- `.pptx`/`.docx` are zip archives, not text. Convert to PDF first, or rough-dump the text:
+  `unzip -p deck.pptx 'ppt/slides/slide*.xml' | sed 's/<[^>]*>/ /g'` for slides,
+  `unzip -p doc.docx word/document.xml | sed 's/<[^>]*>/ /g'` for a Word file.
 - **Textbooks: extract once, grep forever.** `pdftotext book.pdf materials/<book>-full.txt`,
   then build `materials/<book>-chapter-index.md` mapping each chapter to its **line**
   range. Read the index, then `grep -n` / `sed -n 'A,Bp'` the passage. Never split the PDF
@@ -131,6 +134,9 @@ taught, and `status: active` once a lecture has filled them in.
 
 ## Workflows
 
+- **`/get-started`** — first-time setup, a new semester, or adding a class. Walks the
+  student through it one step at a time and checks steps off in `SETUP.md`. See
+  `.claude/skills/get-started/SKILL.md`.
 - **`/class-mode [COURSE]`** — live in-class study partner. Short answers, logs every
   Q&A to `sessions/`. See `.claude/skills/class-mode/SKILL.md`.
 - **`/homework-mode [COURSE] [assignment]`** — study partner while doing graded work,
