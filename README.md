@@ -1,4 +1,6 @@
-# Class Notes Template
+# Sylla-Base
+
+**A knowledge base that builds itself from your class notes.**
 
 A [Karpathy-style LLM wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)
 for coursework, built for [Claude Code](https://code.claude.com/docs/en/overview) and
@@ -23,7 +25,7 @@ yourself on, and ask questions against.
 
    Or do both in one step with the [GitHub CLI](https://cli.github.com):
 
-       gh repo create my-notes --template Ikuchar1/class-notes-template --private --clone
+       gh repo create my-notes --template Ikuchar1/Sylla-Base --private --clone
        cd my-notes
 
 2. **Run `claude`, then type `/get-started`.** It asks your name and classes, makes a
