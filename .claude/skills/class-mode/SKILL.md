@@ -14,7 +14,7 @@ time** — and a session file they can turn into wiki notes afterward.
 
 1. Determine the course (argument, or ask once). Courses live at `<TERM>/<COURSE>/` —
    see `## Current term` in the repo `CLAUDE.md`. Resolve a bare course code against
-   the newest term folder.
+   the term marked `(current)` there.
 2. Create `<TERM>/<COURSE>/sessions/YYYY-MM-DD-class.md` from the skeleton below if it
    does not exist. If it does, **append** — do not regenerate.
 3. Confirm the file path in one line. Then stop talking and take questions.

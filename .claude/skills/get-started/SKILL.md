@@ -116,8 +116,8 @@ Once every class is done:
 > Want me to build your wiki now? I'll read each syllabus and make a page for every
 > graded item with its due date — so "what's due?" works from today.
 
-On yes, follow `.claude/commands/process-notes.md` for every class. Report in two or three lines: pages per class, and the
-next thing due.
+On yes, follow `.claude/commands/process-notes.md` for every class. Report in two or
+three lines: pages per class, and the next thing due.
 
 ## 8. Obsidian (optional)
 

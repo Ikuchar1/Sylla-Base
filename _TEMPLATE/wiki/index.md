@@ -8,6 +8,9 @@ _(none yet — e.g. `[[some-concept]]` — one-line summary)_
 ## Sources
 _(none yet — one page per lecture and per handout)_
 
+## Assignments
+_(none yet — one page per graded item, from the syllabus)_
+
 ## Analyses
 _(none yet — exam reviews, comparisons)_
 

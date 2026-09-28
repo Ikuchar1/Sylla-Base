@@ -36,7 +36,7 @@ Homework sessions run long; don't let the wiki eat the context.
 |---|---|
 | Session start | `ls wiki/concepts/` (filenames only) + the one assignment page |
 | During the session | none by default — write `[[links]]` from the filename list |
-| End of session | update the Progress checklist on that one assignment page |
+| End of session | update the `## Checklist` on that one assignment page |
 
 Exception: if a question is graded and the answer depends on how *this course* taught
 it, grep the course wiki and decks first — the course's answer beats the general one.
@@ -162,7 +162,7 @@ When they say they're done for now:
 1. Flush any unlogged exchanges.
 2. Update `## Where I left off` — the specific next step, not "keep going".
 3. Update `## Concepts used` (deduped) and fill `## Summary` (5 bullets max).
-4. Update the **Progress checklist** on `wiki/assignments/<assignment>.md` if it exists —
+4. Update the **`## Checklist`** on `wiki/assignments/<assignment>.md` if it exists —
    the one wiki write this skill makes.
 5. Report the path. If the **assignment is finished**, suggest `/process-notes <COURSE>`
    in a **fresh conversation** (a full ingest shouldn't inherit a long session's context).
@@ -204,7 +204,7 @@ status: in-progress
   you only proofread, and only when asked.
 - **Don't run ahead.** One section at a time, the one they're on.
 - **Never overwrite a `## Pins` section.**
-- **Don't edit `wiki/` during a session**, except the Progress checklist at the end.
+- **Don't edit `wiki/` during a session**, except that page's `## Checklist` at the end.
 - **Mark outside knowledge** with `> [!note] Outside the notes`. If it contradicts the
   course material, flag both with `> [!warning] Contradiction`.
 - One session file **per assignment**, appended across days.

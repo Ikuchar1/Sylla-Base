@@ -28,7 +28,8 @@ own questions) get buried when a page restates every bullet.
 ## 1. Find unprocessed raw files
 
 List `<TERM>/<COURSE>/lectures/*.txt`, `.../materials/*`, and `.../sessions/*.md`
-(skip `_template.txt`, `README.md`, and `*-chapter-index.md`). A raw file is
+(skip `_template.txt`, `README.md`, and a textbook's `*-full.txt` / `*-chapter-index.md`
+extraction). A raw file is
 **unprocessed** if `wiki/log.md` has no entry naming it.
 
 - **Class session** (`YYYY-MM-DD-class.md`, from class mode) — treat like a lecture: it
@@ -52,8 +53,9 @@ a trace.
 
 **b. Source page.** Write `wiki/sources/<name>.md` from `wiki/sources/_TEMPLATE.md`:
 `lecture-YYYY-MM-DD`, `class-YYYY-MM-DD` (class session), `deck-NN-<slug>`, or
-`reading-<slug>`. (A syllabus is `<dept-###>-syllabus` — see below.) Open with the pointer to the file (`> **Full deck:** materials/...`),
-then a slide map, then the argument in a few lines.
+`reading-<slug>` (a syllabus is different — see [Syllabus](#syllabus)). Open with the
+pointer to the file (`> **Full deck:** materials/...`), then a slide map, then the
+argument in a few lines.
 
 **c. Concept pages — `wiki-style: concepts`.** For each concept, create or update
 `wiki/concepts/<specific-kebab-name>.md` from `wiki/concepts/_TEMPLATE.md`.
@@ -87,11 +89,11 @@ Append one entry to `wiki/log.md`:
 
 A syllabus replaces steps b–e with:
 
-- **Source page** `wiki/sources/<dept-###>-syllabus.md` (e.g. `csce-480h-syllabus`) —
-  never plain `syllabus.md`; every course has one and filenames must be unique (a lab
-  syllabus: `<dept-###>-lab-syllabus`). What's
-  graded (component · weight · link to its page), the course arc in a few lines, and
-  only the policies that cost points (late penalty, drops, a must-pass component).
+- **Source page** `wiki/sources/<dept-###>-syllabus.md` (e.g. `csce-480h-syllabus`;
+  a lab syllabus is `<dept-###>-lab-syllabus`) — never plain `syllabus.md`, since every
+  course has one and filenames must be unique. What's graded (component · weight · link
+  to its page), the course arc in a few lines, and only the policies that cost points
+  (late penalty, drops, a must-pass component).
 - **Assignment pages** from `wiki/assignments/_TEMPLATE.md`. One page per **major**
   graded item (exam, project, paper) with `due` and `weight`. Recurring small items
   (weekly quizzes, labs, discussion posts) share one `<type>-tracker.md` — a row per due
