@@ -28,6 +28,7 @@ Once everything above is checked:
 - **New slides posted** — download them, then tell Claude "grab the new slides from my Downloads"
 - **After class** — `/process-notes <CLASS>`
 - **Homework** — `/homework-mode <CLASS> <assignment>`
+- **Before an exam** — `/lint-wiki <CLASS>`
 - **Anytime** — "what's due?", "quiz me on …", "what's on exam 1?"
 
 New semester, or adding a class? Run `/get-started` again.

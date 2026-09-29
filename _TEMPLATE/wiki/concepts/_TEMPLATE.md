@@ -23,7 +23,7 @@ range instead of restating it.>
 - [[other-concept]]
 
 ## Sources
-- [[lecture-YYYY-MM-DD]]
+- [[lecture-YYYY-MM-DD-<course>]]
 
 ## Pins
 <!-- Your own corrections. NEVER overwritten when regenerating. -->

@@ -164,8 +164,9 @@ When they say they're done for now:
 3. Update `## Concepts used` (deduped) and fill `## Summary` (5 bullets max).
 4. Update the **`## Checklist`** on `wiki/assignments/<assignment>.md` if it exists —
    the one wiki write this skill makes.
-5. Report the path. If the **assignment is finished**, suggest `/process-notes <COURSE>`
-   in a **fresh conversation** (a full ingest shouldn't inherit a long session's context).
+5. Report the path and suggest `/process-notes <COURSE>` in a **fresh conversation** (a
+   full ingest shouldn't inherit a long session's context). Mid-assignment is fine —
+   days logged later are picked up as a change.
 
 ## Session file skeleton
 

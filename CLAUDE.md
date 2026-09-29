@@ -56,7 +56,7 @@ spans every semester.
         hw-<assignment>.md       homework-mode, one per assignment
       wiki/
         index.md               catalog of every page + one-line summary
-        log.md                 append-only audit trail of every ingest
+        log.md                 append-only audit trail of every ingest and lint
         concepts/              one page per idea, accumulates across lectures
         sources/               one page per lecture, deck, reading, or the syllabus
         assignments/           one page per assignment: what it asks, concepts, status
@@ -83,15 +83,17 @@ Each `course.md` sets `wiki-style`:
 - **`glossary`** — for reading-heavy courses (a textbook chapter a week). One page per
   vocabulary term would produce hundreds of files. Instead, each chapter produces **two**
   files: a new section in `wiki/glossary.md` (every term, the author's own wording for
-  defined terms, one concrete example each) and one `wiki/sources/reading-<slug>.md`
-  (the chapter's argument and evidence — draft material for reading summaries). Make a
-  `concepts/` page only for an idea that genuinely recurs across chapters.
+  defined terms, one concrete example each) and one
+  `wiki/sources/reading-<slug>-<course>.md` (the chapter's argument and evidence — draft
+  material for reading summaries). Make a `concepts/` page only for an idea that
+  genuinely recurs across chapters.
 - **`sources`** — for courses with nothing to study (e.g. a pass/no-pass guest-speaker
   seminar). One `sources/` page per session is the whole record; no concept pages.
 
-**Sources vs concepts:** `sources/lecture-2026-08-27.md` answers *"what happened
-Thursday."* `concepts/weather-front.md` answers *"what do I know about fronts"* — built
-from many lectures and decks. `assignments/quiz-3.md` answers *"what am I graded on."*
+**Sources vs concepts:** `sources/lecture-2026-08-27-metr-100.md` answers *"what
+happened Thursday."* `concepts/weather-front.md` answers *"what do I know about
+fronts"* — built from many lectures and decks. `assignments/quiz-3-metr-100.md` answers
+*"what am I graded on."*
 
 Concept pages carry `status: planned` when reserved from the syllabus but not yet
 taught, and `status: active` once a lecture has filled them in.
@@ -105,10 +107,14 @@ taught, and `status: active` once a lecture has filled them in.
   a writing assignment. Never touch the instructor's boilerplate.
 - **Never overwrite a `## Pins` section** on a wiki page. Those are the student's own
   corrections and outrank anything generated.
-- **Concept filenames must be specific** — `social-norm.md`, not `norm.md`. The root
-  vault resolves wikilinks by filename across every course and term, so a collision
-  breaks both links there. Check the name against every course before creating a page.
-- **Cite sources on every claim**: `[[lecture-2026-08-27]]`.
+- **Wiki filenames must be unique across every course and term.** The root vault
+  resolves wikilinks by filename, so a collision breaks both links there.
+  - **Source, assignment, and analysis pages end with the course code**, lowercased:
+    `lecture-2026-08-27-csce-480h`, `exam-1-csce-480h`, `syllabus-csce-480h`. Two
+    classes can meet on the same day; both have a Quiz 1.
+  - **Concept pages stay unsuffixed but specific** — `social-norm.md`, not `norm.md`.
+    Check the name against every course before creating one.
+- **Cite sources on every claim**: `[[lecture-2026-08-27-csce-480h]]`.
 - **Don't blur the student's notes with your own knowledge.** Outside knowledge is
   marked `> [!note] Outside the notes`. If the notes don't cover something, say so.
 - **Flag contradictions, never resolve them silently.** When a deck and the notes
@@ -141,8 +147,11 @@ taught, and `status: active` once a lecture has filled them in.
   Q&A to `sessions/`. See `.claude/skills/class-mode/SKILL.md`.
 - **`/homework-mode [COURSE] [assignment]`** — study partner while doing graded work,
   code or writing. See `.claude/skills/homework-mode/SKILL.md`.
-- **`/process-notes [COURSE]`** — the main loop. Ingests unprocessed raw files into
+- **`/process-notes [COURSE]`** — the main loop. Ingests new or changed raw files into
   the wiki. See `.claude/commands/process-notes.md`.
+- **`/lint-wiki [COURSE]`** — health-check a course's wiki before an exam. Reports
+  numbered findings, then fixes only the ones the student picks. See
+  `.claude/skills/lint-wiki/SKILL.md`.
 - **Answering a graded question** (quiz, worksheet, discussion) — check that course's
   `wiki/` and decks **first**. "Commonly used" on a quiz means commonly used *in this
   class*. If the course's answer differs from general practice, give the course's answer

@@ -67,12 +67,14 @@ Always start `claude` from the repo root — that's where the commands live.
 | `/process-notes [COURSE]` | Turns new notes, slides, and session logs into wiki pages. No argument = every class this term. |
 | `/class-mode [COURSE]` | Live study partner during lecture. Short answers, logged to `sessions/`. |
 | `/homework-mode [COURSE] [assignment]` | Works through an assignment with you one section at a time — explains, reviews your code, or outlines and proofreads writing. Logs where your guesses went wrong. |
+| `/lint-wiki [COURSE]` | Health-checks a class's wiki before an exam — broken links, orphan pages, contradictions, stale claims. Lists what it found; fixes only what you pick. |
 
 Or just ask:
 
     grab the chapter 3 slides from my Downloads
     what's on quiz 2? teach me one topic at a time
     make a 2-page cheat sheet for exam 1
+    health-check my wiki before exam 1
     check my answers
     quiz me on unit 1
     what did I miss?

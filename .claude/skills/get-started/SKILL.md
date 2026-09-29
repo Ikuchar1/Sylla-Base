@@ -138,12 +138,13 @@ three lines: pages per class, and the next thing due.
 
 ## 10. Done
 
-Check the last item, then give them the day-to-day in four lines — it's also at the
+Check the last item, then give them the day-to-day in five lines — it's also at the
 bottom of `SETUP.md`:
 - **In class** — `/class-mode CSCE-480H`, or type notes in `lectures/YYYY-MM-DD.txt`
 - **New slides posted** — download them and say "grab the new slides from my Downloads"
 - **After class** — `/process-notes CSCE-480H`
 - **Homework** — `/homework-mode CSCE-480H <assignment>`
+- **Before an exam** — `/lint-wiki CSCE-480H`
 
 ## Pulling from Downloads
 
